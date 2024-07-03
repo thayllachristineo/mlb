@@ -87,14 +87,16 @@ const ItemDetails = () => {
   if (hasError)
     return (
       <Container>
-        <TextMessage text="some error ocurred :(" />
+        <TextMessage>
+          some error ocurred :/
+        </TextMessage>
       </Container>
     );
 
   if (!productDetails)
     return (
       <Container>
-        <TextMessage text="there's nothing here! :/" />
+        <TextMessage>there's nothing here! :/</TextMessage>
       </Container>
     );
 

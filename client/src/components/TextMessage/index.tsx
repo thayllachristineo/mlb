@@ -1,14 +1,10 @@
-import { FC } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
 import * as Styled from './TextMessage.styled';
 
-type Props = {
-  text: string;
-};
-
-const TextMessage: FC<Props> = ({ text }): JSX.Element => (
+const TextMessage: FC<PropsWithChildren> = ({ children }): JSX.Element => (
   <Styled.Wrapper>
-    <h1>{text}</h1>
+    <h1>{children}</h1>
   </Styled.Wrapper>
 );
 

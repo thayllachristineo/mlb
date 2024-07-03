@@ -53,14 +53,14 @@ const ItemsResult: FC = (): JSX.Element => {
   if (hasError)
     return (
       <Container>
-        <TextMessage text="some error ocurred :(" />
+        <TextMessage>some error ocurred :/</TextMessage>
       </Container>
     );
 
   if (!data.products.length)
     return (
       <Container>
-        <TextMessage text="404 | There's nothing here!" />
+        <TextMessage>404 | There's nothing here!</TextMessage>
       </Container>
     );
 
