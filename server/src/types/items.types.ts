@@ -1,46 +1,38 @@
 import { Author } from './name.types';
 
-interface ItemShipping {
-  free_shipping: boolean;
-}
-
-export interface SearchItemPayload {
+export interface SearchItemResult {
   id: string;
   title: string;
   price: number;
   currency_id: string;
   condition: string;
   thumbnail: string;
-  shipping: ItemShipping;
-}
-
-export interface ItemPrice {
-  currency: string;
-  amount: number;
-  decimals: number;
+  shipping: {
+    free_shipping: boolean;
+  };
+  sold_quantity: number;
 }
 
 export interface SearchItemResponse {
   id: string;
   title: string;
-  price: ItemPrice;
+  price: {
+    amount: number;
+    currency: string;
+    decimals: number;
+  };
   picture: string;
   condition: string;
   free_shipping: boolean;
 }
 
-export interface DetailsItemPayload extends SearchItemPayload {
-  sold_quantity: number;
+export interface DetailsDescriptionResult {
   plain_text: string;
-  author: Author;
 }
 
-interface DetailsItem {
-  sold_quantity: number;
-  description: string;
-}
+export type DetailsItemResult = SearchItemResult & DetailsDescriptionResult;
 
 export interface DetailsItemResponse {
   author: Author;
-  item: DetailsItem;
+  item: { sold_quantity: number; description: string };
 }
