@@ -15,32 +15,3 @@ export interface Filter {
   type: string;
   values: FilterValues[];
 }
-
-export interface ItemPrice {
-  currency: string;
-  amount: number;
-  decimals: number;
-}
-
-export interface ItemShipping {
-  free_shipping: boolean;
-}
-
-export interface ItemPayload {
-  id: string;
-  title: string;
-  price: number;
-  currency_id: string;
-  condition: string;
-  thumbnail: string;
-  shipping: ItemShipping;
-}
-
-export interface ItemResponse {
-  id: string;
-  title: string;
-  price: ItemPrice;
-  picture: string;
-  condition: string;
-  free_shipping: boolean;
-}

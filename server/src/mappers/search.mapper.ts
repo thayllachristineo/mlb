@@ -1,10 +1,8 @@
-import {
-  Filter,
-  FilterValues,
-  ItemPayload,
-  ItemResponse,
-} from '../types/search.types';
 import { getAuthor } from './name.mapper';
+import { getItems } from './items.mapper';
+
+import { Filter, FilterValues } from '../types/search.types';
+import { SearchItemPayload } from '../types/items.types';
 
 const getCategories = (data: any): string[] | [] => {
   const categoryFilter = data.filters.find(
@@ -16,23 +14,9 @@ const getCategories = (data: any): string[] | [] => {
     : [];
 };
 
-const getItems = (item: ItemPayload): ItemResponse => ({
-  id: item.id,
-  title: item.title,
-  price: {
-    currency: item.currency_id,
-    amount: Math.floor(item.price),
-    decimals: parseFloat((item.price % 1).toFixed(2)),
-  },
-  picture: item.thumbnail,
-  condition: item.condition,
-  free_shipping: item.shipping.free_shipping,
-});
-
 const searchMapper = (data: any) => ({
   author: getAuthor(),
   categories: getCategories(data),
-  items: data.results.map((d: ItemPayload) => getItems(d)),
+  items: data.results.map((d: SearchItemPayload) => getItems(d)),
 });
-
 export default searchMapper;
