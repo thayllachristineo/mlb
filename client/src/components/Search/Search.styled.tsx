@@ -4,12 +4,11 @@ import styled from 'styled-components';
 import color from '@styles/color';
 import font from '@styles/font';
 
-const Wrapper = styled.nav`
+const Navigation = styled.nav`
   background-color: ${color.yellow};
   display: flex;
-  font-family: 'Roboto', sans-serif;
   justify-content: center;
-  padding: 10px;
+  padding: 12px;
 `;
 
 const Content = styled.div`
@@ -59,10 +58,11 @@ const Input = styled.input`
 `;
 
 const Icon = styled.button`
-  background-color: ${color.gray.lighten};
+  align-items: center;
   border-radius: 0 4px 4px 0;
   border: none;
   cursor: pointer;
+  display: flex;
   padding: 8px;
 
   &:active,
@@ -76,4 +76,4 @@ const Icon = styled.button`
   }
 `;
 
-export { Wrapper, Content, Link, Logo, Input, Icon };
+export { Navigation, Content, Link, Logo, Input, Icon };

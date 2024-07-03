@@ -1,6 +1,8 @@
 import { ChangeEvent, FC, KeyboardEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import Lupa from '../../assets/search.svg';
+
 import * as Styled from './Search.styled';
 
 const Search: FC = (): JSX.Element => {
@@ -23,7 +25,7 @@ const Search: FC = (): JSX.Element => {
   };
 
   return (
-    <Styled.Wrapper>
+    <Styled.Navigation>
       <Styled.Content>
         <Styled.Link to="/">
           <Styled.Logo
@@ -42,10 +44,10 @@ const Search: FC = (): JSX.Element => {
           onKeyDown={e => handleOnKeyDown(e)}
         />
         <Styled.Icon onClick={handleOnClick}>
-          <img src="/assets/search.svg" alt="search icon" />
+          <img src={Lupa} alt="search icon" />
         </Styled.Icon>
       </Styled.Content>
-    </Styled.Wrapper>
+    </Styled.Navigation>
   );
 };
 
