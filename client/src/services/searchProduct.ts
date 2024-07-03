@@ -9,7 +9,7 @@ const searchProducts = async (name: string) => {
 
     const { items, categories } = await response.json();
 
-    return { products: items, breadcrumbs: categories };
+    return { products: items.slice(0, 4), breadcrumbs: categories };
   } catch (error) {
     console.error(error);
   }
