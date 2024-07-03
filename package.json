@@ -6,5 +6,7 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "devDependencies": {}
+  "devDependencies": {
+    "prettier": "^3.3.2"
+  }
 }
