@@ -1,8 +1,3 @@
-export interface Author {
-  name: string;
-  lastname: string;
-}
-
 export interface PathFromRoot {
   id: string;
   name: string;

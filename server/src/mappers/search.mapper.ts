@@ -1,15 +1,10 @@
 import {
-  Author,
   Filter,
   FilterValues,
   ItemPayload,
   ItemResponse,
 } from '../types/search.types';
-
-const getAuthor = (): Author => ({
-  name: 'Name',
-  lastname: 'LastName',
-});
+import { getAuthor } from './name.mapper';
 
 const getCategories = (data: any): string[] | [] => {
   const categoryFilter = data.filters.find(
