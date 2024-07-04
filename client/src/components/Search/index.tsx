@@ -7,6 +7,7 @@ import * as Styled from './Search.styled';
 
 const Search: FC = (): JSX.Element => {
   const [value, setValue] = useState<string>('');
+  const [isDisabled, setIsDisabled] = useState<boolean>(true);
 
   const navigate = useNavigate();
 
@@ -16,11 +17,16 @@ const Search: FC = (): JSX.Element => {
   };
 
   const handleOnKeyDown = (e: KeyboardEvent): void => {
-    if (e.key !== 'Enter' || !value.trim()) return;
+    if (e.key !== 'Enter' || !value.trim()) return setIsDisabled(true);
+    else setIsDisabled(false);
+
     navigate(`/items?search=${value}`);
   };
 
   const handleOnClick = (): void => {
+    if (!value.trim()) return setIsDisabled(true);
+    else setIsDisabled(false);
+
     navigate(`/items?search=${value}`);
   };
 
@@ -43,7 +49,7 @@ const Search: FC = (): JSX.Element => {
           onChange={e => handleOnChange(e)}
           onKeyDown={e => handleOnKeyDown(e)}
         />
-        <Styled.Icon onClick={handleOnClick}>
+        <Styled.Icon onClick={handleOnClick} disabled={isDisabled}>
           <img src={Lupa} alt="search icon" />
         </Styled.Icon>
       </Styled.Content>

@@ -71,6 +71,11 @@ const Icon = styled.button`
     outline: none;
   }
 
+  &:disabled {
+    background-color: ${color.gray.lighten};
+    cursor: not-allowed;
+  }
+
   img {
     height: 16px;
   }
