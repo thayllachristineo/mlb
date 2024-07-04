@@ -4,12 +4,23 @@ import color from '@styles/color';
 
 export const Banner = styled.div`
   background-color: ${color.yellow};
-  padding-top: 36px;
+  height: 225px;
+
+  @media only screen and (min-width: 768px) {
+    height: 335px;
+    padding-top: 36px;
+  }
 `;
 
 export const Image = styled.img`
-  max-width: 100%;
-  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  width: 100%;
+
+  @media only screen and (min-width: 768px) {
+    width: 100vw;
+  }
 `;
 
 export const CardContainer = styled.div`
@@ -18,16 +29,14 @@ export const CardContainer = styled.div`
 
 export const CardGroup = styled.div`
   display: flex;
+  margin: 0 auto;
+  overflow-x: scroll;
   position: absolute;
   top: -48px;
-  margin: 0 auto;
   width: 100%;
-  overflow-x: scroll;
-  display: flex;
-  justify-content: center;
 
   @media only screen and (min-width: 768px) {
-    top: -72px;
     overflow-x: auto;
+    top: -72px;
   }
 `;

@@ -4,17 +4,18 @@ import color from '@styles/color';
 
 export const Card = styled.div`
   background-color: ${color.white};
-  border: 1px solid ${color.gray.lighten};
   border-radius: 6px;
+  border: 1px solid ${color.gray.lighten};
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 265px;
   margin: 8px 4px;
+  min-height: 260px;
+  min-width: 150px;
 
   @media only screen and (min-width: 576px) {
-    height: 285px;
+    min-height: 285px;
     width: 250px;
   }
 `;
