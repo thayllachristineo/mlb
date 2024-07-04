@@ -24,7 +24,7 @@ describe('<Search />', () => {
       </MemoryRouter>,
     );
 
-    const input = screen.getByPlaceholderText('Nunca dejes de buscar');
+    const input = screen.getByPlaceholderText('Nunca deixe de buscar');
     expect(input).toBeInTheDocument();
 
     const button = screen.getByAltText('search icon');
@@ -38,7 +38,7 @@ describe('<Search />', () => {
       </MemoryRouter>,
     );
 
-    const input = screen.getByPlaceholderText('Nunca dejes de buscar');
+    const input = screen.getByPlaceholderText('Nunca deixe de buscar');
     await userEvent.type(input, 'iphone');
 
     expect(input).toHaveValue('iphone');
@@ -51,7 +51,7 @@ describe('<Search />', () => {
       </MemoryRouter>,
     );
 
-    const input = screen.getByPlaceholderText('Nunca dejes de buscar');
+    const input = screen.getByPlaceholderText('Nunca deixe de buscar');
     await userEvent.type(input, 'iphone');
 
     const button = screen.getByAltText('search icon');
@@ -67,7 +67,7 @@ describe('<Search />', () => {
       </MemoryRouter>,
     );
 
-    const input = screen.getByPlaceholderText('Nunca dejes de buscar');
+    const input = screen.getByPlaceholderText('Nunca deixe de buscar');
     await userEvent.type(input, 'iphone');
     await fireEvent.keyDown(input, { key: 'Enter', code: 'Enter' }); // Simula o Enter
 

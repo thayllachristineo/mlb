@@ -46,7 +46,7 @@ const Search: FC = (): JSX.Element => {
         <Styled.Input
           id="inputSearch"
           type="text"
-          placeholder="Nunca dejes de buscar"
+          placeholder="Nunca deixe de buscar"
           value={value}
           onChange={e => handleOnChange(e)}
           onKeyDown={e => handleOnKeyDown(e)}
