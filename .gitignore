@@ -7,7 +7,7 @@
 npm-debug.log*
 
 # Test files
-/coverage
+coverage
 
 # Production files
 dist
