@@ -64,9 +64,9 @@ const ItemDetails = () => {
       try {
         setIsLoading(true);
 
-        const result = await detailsProducts(id);
+        const result = await detailsProducts(id as string);
 
-        setProductDetails(result);
+        if (result) setProductDetails(result);
       } catch (error) {
         setHasError(true);
       } finally {
