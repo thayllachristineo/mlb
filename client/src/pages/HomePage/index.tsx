@@ -1,7 +1,6 @@
 import { FC } from 'react';
 
 import Container from '@components/Container';
-import color from '@styles/color';
 
 import * as Styled from './HomePage.styled';
 import Card from './components/Card';

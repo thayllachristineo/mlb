@@ -54,7 +54,7 @@ describe('DetailsProduct', () => {
   it('does not render price if priceCurrency is undefined', () => {
     render(
       <MemoryRouter>
-        <DetailsProduct {...props} priceCurrency={undefined} />
+        <DetailsProduct {...props} priceCurrency="" />
       </MemoryRouter>,
     );
     expect(screen.queryByText('ARS 199,90')).not.toBeInTheDocument();
