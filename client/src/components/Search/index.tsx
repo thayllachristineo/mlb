@@ -17,16 +17,16 @@ const Search: FC = (): JSX.Element => {
   };
 
   const handleOnKeyDown = (e: KeyboardEvent): void => {
-    if (e.key !== 'Enter' || !value.trim()) return setIsDisabled(true);
-    else setIsDisabled(false);
+    if (e.key !== 'Enter' || !value.trim()) return setIsDisabled(false);
+    else setIsDisabled(true);
 
     navigate(`/items?search=${value}`);
     setValue('');
   };
 
   const handleOnClick = (): void => {
-    if (!value.trim()) return setIsDisabled(true);
-    else setIsDisabled(false);
+    if (!value.trim()) return setIsDisabled(false);
+    else setIsDisabled(true);
 
     navigate(`/items?search=${value}`);
     setValue('');
