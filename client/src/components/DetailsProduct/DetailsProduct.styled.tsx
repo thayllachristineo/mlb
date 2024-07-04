@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as LinkComponent } from 'react-router-dom';
 
 import color from '@styles/color';
 import font from '@styles/font';
@@ -106,7 +107,7 @@ const Price = styled.p`
   }
 `;
 
-const Button = styled.button`
+const Link = styled(LinkComponent)`
   background-color: ${color.blue.lighten};
   border-color: transparent;
   border-radius: 4px;
@@ -116,6 +117,7 @@ const Button = styled.button`
   font-weight: ${font.weight.bold};
   height: 42px;
   padding: 8px 16px;
+  text-decoration: none;
   width: 100%;
 
   &:hover {
@@ -135,4 +137,4 @@ const Button = styled.button`
   }
 `;
 
-export { Wrapper, Image, Description, Infos, Title, Subtitle, Price, Button };
+export { Wrapper, Image, Description, Infos, Title, Subtitle, Price, Link };

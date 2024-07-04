@@ -13,7 +13,7 @@ type Props = {
   priceCurrency: string;
   priceAmount: number;
   priceDecimals: number;
-  onClick: () => void;
+  to: string;
 };
 
 const DetailsProduct: FC<Props> = ({
@@ -25,7 +25,7 @@ const DetailsProduct: FC<Props> = ({
   priceCurrency,
   priceAmount,
   priceDecimals,
-  onClick,
+  to,
 }): JSX.Element => {
   return (
     <Styled.Wrapper>
@@ -54,7 +54,7 @@ const DetailsProduct: FC<Props> = ({
           </Styled.Price>
         )}
 
-        <Styled.Button onClick={onClick}>Comprar</Styled.Button>
+        <Styled.Link to={to}>Comprar</Styled.Link>
       </Styled.Infos>
     </Styled.Wrapper>
   );

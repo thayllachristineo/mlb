@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { MemoryRouter } from 'react-router-dom';
 
 import DetailsProduct from '.';
 
@@ -20,7 +20,7 @@ describe('DetailsProduct', () => {
     priceCurrency: 'ARS',
     priceAmount: 328999,
     priceDecimals: 0,
-    onClick: jest.fn(),
+    to: '/comprar-produto',
   };
 
   beforeEach(() => {
@@ -29,7 +29,11 @@ describe('DetailsProduct', () => {
   });
 
   it('renders product details correctly', () => {
-    render(<DetailsProduct {...props} />);
+    render(
+      <MemoryRouter>
+        <DetailsProduct {...props} />
+      </MemoryRouter>,
+    );
 
     expect(screen.getByRole('img', { name: props.title })).toBeInTheDocument();
     expect(screen.getByText(props.description)).toBeInTheDocument();
@@ -42,20 +46,17 @@ describe('DetailsProduct', () => {
     ).toBeInTheDocument();
     expect(screen.getByText('328.999')).toBeInTheDocument();
 
-    const buyButton = screen.getByRole('button', { name: 'Comprar' });
-    expect(buyButton).toBeInTheDocument();
-  });
-
-  it('calls onClick when buy button is clicked', async () => {
-    render(<DetailsProduct {...props} />);
-    const buyButton = screen.getByRole('button', { name: 'Comprar' });
-
-    await userEvent.click(buyButton);
-    expect(props.onClick).toHaveBeenCalledTimes(1);
+    const buyLink = screen.getByRole('link', { name: 'Comprar' });
+    expect(buyLink).toBeInTheDocument();
+    expect(buyLink).toHaveAttribute('href', props.to);
   });
 
   it('does not render price if priceCurrency is undefined', () => {
-    render(<DetailsProduct {...props} priceCurrency={undefined} />);
+    render(
+      <MemoryRouter>
+        <DetailsProduct {...props} priceCurrency={undefined} />
+      </MemoryRouter>,
+    );
     expect(screen.queryByText('ARS 199,90')).not.toBeInTheDocument();
   });
 });

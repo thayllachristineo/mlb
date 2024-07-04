@@ -56,10 +56,8 @@ const ItemDetails = () => {
 
   const { id } = useParams<Params>();
 
-  const handleOnClick = (): void => {
-    const productID = id?.split('MLA')[1];
-    window.location.href = `https://produto.mercadolivre.com.br/MLA-${productID}`;
-  };
+  const productID = id?.split('MLA')[1];
+  const urlToBuy = `https://api.mercadolibre.com/items/${productID}`;
 
   useEffect(() => {
     (async () => {
@@ -111,7 +109,7 @@ const ItemDetails = () => {
         priceCurrency={productDetails.price.currency}
         priceAmount={productDetails.price.amount}
         priceDecimals={productDetails.price.decimals}
-        onClick={handleOnClick}
+        to={urlToBuy}
       />
     </Base>
   );
