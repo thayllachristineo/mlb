@@ -36,7 +36,7 @@ const DetailsProduct: FC<Props> = ({
 
         <Styled.Description>
           <h2>Descripción del producto</h2>
-          <article>{description}</article>
+          <p>{description}</p>
         </Styled.Description>
       </div>
 

@@ -6,7 +6,8 @@ import font from '@styles/font';
 
 const Wrapper = styled.div`
   grid-template-columns: 2fr 1fr;
-
+  display: flex;
+  flex-direction: column-reverse;
   @media (min-width: 596px) {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -33,27 +34,40 @@ const Image = styled.div`
 `;
 
 const Description = styled.div`
-  display: none;
+  h2 {
+    font-size: ${font.size.large};
+  }
+
+  p {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    color: ${color.gray.regular};
+    display: -webkit-box;
+    font-size: ${font.size.small};
+    margin-top: 4px;
+    overflow: hidden;
+  }
 
   @media (min-width: 596px) {
-    display: block;
     margin-top: 24px;
+    text-overflow: initial;
 
     h2 {
       font-size: ${font.size.xlarge};
       font-weight: ${font.weight.regular};
-      padding-bottom: 24px;
+      padding-bottom: 8px;
     }
 
-    article {
-      color: ${color.gray.regular};
+    p {
       font-size: ${font.size.medium};
       font-weight: ${font.weight.light};
+      -webkit-box-orient: initial;
     }
   }
 `;
 
 const Infos = styled.div`
+  margin-bottom: 16px;
   @media (min-width: 596px) {
     margin: 0 16px;
     padding: 0 8px;
