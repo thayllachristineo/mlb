@@ -1,11 +1,9 @@
 const options = { method: 'GET' };
 
+const url = `${import.meta.env.VITE_API_BASE_URL}/api/items`;
 const searchProducts = async (name: string) => {
   try {
-    const response = await fetch(
-      `http://localhost:3001/api/items?q=${name}`,
-      options,
-    );
+    const response = await fetch(`${url}?q=${name}`, options);
 
     const { items, categories } = await response.json();
 
