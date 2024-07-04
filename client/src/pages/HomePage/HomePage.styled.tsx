@@ -7,8 +7,13 @@ export const Banner = styled.div`
   height: 225px;
 
   @media only screen and (min-width: 768px) {
-    height: 335px;
-    padding-top: 36px;
+    height: 45vh;
+    padding-top: 24px;
+  }
+
+  @media only screen and (min-width: 1290px) {
+    height: 60vh;
+    padding-top: 0;
   }
 `;
 
@@ -19,6 +24,7 @@ export const Image = styled.img`
   width: 100%;
 
   @media only screen and (min-width: 768px) {
+    max-width: 100%;
     width: 100vw;
   }
 `;
@@ -36,7 +42,14 @@ export const CardGroup = styled.div`
   width: 100%;
 
   @media only screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
     overflow-x: auto;
-    top: -72px;
+    top: -92px;
+  }
+
+  @media only screen and (min-width: 1290px) {
+    padding-top: 0;
+    top: -120px;
   }
 `;

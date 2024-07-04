@@ -11,11 +11,11 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   margin: 8px 4px;
-  min-height: 260px;
+  /* min-height: 260px; */
   min-width: 150px;
 
   @media only screen and (min-width: 576px) {
-    min-height: 285px;
+    /* min-height: 285px; */
     width: 250px;
   }
 `;
