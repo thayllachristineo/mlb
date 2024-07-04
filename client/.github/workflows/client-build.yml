@@ -4,7 +4,13 @@ on:
   push:
     branches: [main]
   pull_request:
+    paths:
+      - 'client/**'
   workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: client
 
 jobs:
   build:
