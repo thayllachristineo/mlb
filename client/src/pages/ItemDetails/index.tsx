@@ -23,6 +23,7 @@ const INITIAL_VALUE = {
     amount: 0,
     decimals: 0,
   },
+  permalink: '',
 };
 
 interface Price {
@@ -38,6 +39,7 @@ interface Details {
   sold_quantity: number;
   condition: string;
   price: Price;
+  permalink: string;
 }
 
 type Params = {
@@ -55,9 +57,6 @@ const ItemDetails = () => {
   } = useContext(AppContext);
 
   const { id } = useParams<Params>();
-
-  const productID = id?.split('MLA')[1];
-  const urlToBuy = `https://api.mercadolibre.com/items/${productID}`;
 
   useEffect(() => {
     (async () => {
@@ -107,7 +106,7 @@ const ItemDetails = () => {
         priceCurrency={productDetails.price.currency}
         priceAmount={productDetails.price.amount}
         priceDecimals={productDetails.price.decimals}
-        to={urlToBuy}
+        to={productDetails.permalink}
       />
     </Base>
   );

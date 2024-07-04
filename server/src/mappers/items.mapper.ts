@@ -11,4 +11,5 @@ export const getItems = (item: SearchItemResult): SearchItemResponse => ({
   picture: item?.thumbnail,
   condition: item?.condition,
   free_shipping: item?.shipping?.free_shipping,
+  permalink: item?.permalink,
 });

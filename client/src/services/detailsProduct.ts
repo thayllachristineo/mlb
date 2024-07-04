@@ -12,6 +12,7 @@ interface DetailsResponse {
     };
     sold_quantity: number;
     title: string;
+    permalink: string;
   };
 }
 

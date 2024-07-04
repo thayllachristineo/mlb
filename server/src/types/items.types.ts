@@ -11,6 +11,7 @@ export interface SearchItemResult {
     free_shipping: boolean;
   };
   sold_quantity: number;
+  permalink: string;
 }
 
 export interface SearchItemResponse {
@@ -24,6 +25,7 @@ export interface SearchItemResponse {
   picture: string;
   condition: string;
   free_shipping: boolean;
+  permalink: string;
 }
 
 export interface DetailsDescriptionResult {
