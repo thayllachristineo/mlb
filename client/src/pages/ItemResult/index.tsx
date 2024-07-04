@@ -14,7 +14,7 @@ import ContextType, { Data } from '@contexts/AppContext.types';
 
 import searchProducts from '@services/searchProduct';
 
-import * as S from './ItemResult.styled';
+import * as Styled from './ItemResult.styled';
 
 const ItemsResult: FC = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(false);
@@ -68,7 +68,7 @@ const ItemsResult: FC = (): JSX.Element => {
     <Base breadcrumbs={data.breadcrumbs}>
       <ul>
         {data.products.map(product => (
-          <S.Link to={`/items/${product.id}`} key={product.id}>
+          <Styled.Link to={`/items/${product.id}`} key={product.id}>
             <CardProduct
               thumbnail={product.picture}
               title={product.title}
@@ -77,7 +77,7 @@ const ItemsResult: FC = (): JSX.Element => {
               priceAmount={product.price.amount}
               priceDecimals={product.price.decimals}
             />
-          </S.Link>
+          </Styled.Link>
         ))}
       </ul>
     </Base>
