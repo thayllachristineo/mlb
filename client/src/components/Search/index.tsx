@@ -21,6 +21,7 @@ const Search: FC = (): JSX.Element => {
     else setIsDisabled(false);
 
     navigate(`/items?search=${value}`);
+    setValue('');
   };
 
   const handleOnClick = (): void => {
@@ -28,6 +29,7 @@ const Search: FC = (): JSX.Element => {
     else setIsDisabled(false);
 
     navigate(`/items?search=${value}`);
+    setValue('');
   };
 
   return (
