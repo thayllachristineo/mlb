@@ -24,7 +24,7 @@ const detailsProduct = async (id: string) => {
   try {
     const response = await fetch(`${url}/${id}`, options);
 
-    const { item } = (await response.json()) as DetailsResponse;   
+    const { item } = (await response.json()) as DetailsResponse;
     return item;
   } catch (error) {
     console.error(error);
